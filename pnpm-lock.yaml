@@ -17,6 +17,9 @@ importers:
       '@nanostores/react':
         specifier: ^0.8.4
         version: 0.8.4(nanostores@0.11.4)(react@19.0.0)
+      '@octokit/plugin-paginate-rest':
+        specifier: ^11.4.2
+        version: 11.4.2(@octokit/core@6.1.4)
       '@octokit/rest':
         specifier: ^21.1.1
         version: 21.1.1

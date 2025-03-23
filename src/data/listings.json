@@ -31,6 +31,21 @@
         "Mascotas"
       ],
       "submittedAt": "2025-03-23T17:10:45.794Z"
+    },
+    {
+      "title": "Camisetas Bitcoin",
+      "description": "Camisetas relacionadas con Bitcoin sin logos de Bitcoin para mantener la privacidad.",
+      "contact": "telegram: @heptapodae",
+      "website": "https://hash2wear.com/",
+      "province": "Madrid",
+      "paymentMethods": [
+        "Bitcoin Onchain",
+        "Bitcoin Lightning"
+      ],
+      "categories": [
+        "Moda"
+      ],
+      "submittedAt": "2025-03-23T20:20:33.192Z"
     }
   ]
 }

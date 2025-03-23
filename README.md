@@ -1,48 +1,114 @@
-# Astro Starter Kit: Basics
+# Bitcoin & Lightning Directory for Spain
 
-```sh
-npm create astro@latest -- --template basics
-```
+## 📁 Project Structure
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```plaintext
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── src/                    # Main source code
+│   ├── components/         # Reusable components
+│   ├── layouts/           # Astro layouts
+│   ├── pages/             # Application pages
+│   └── styles/            # Global CSS files
+├── public/                # Static files
+│   ├── images/            # Images
+│   └── icons/            # Icons
+├── data/                  # JSON listing data
+├── netlify/               # Netlify configuration
+│   └── functions/        # Serverless functions
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+⚠️ **Security Warning**
+Before publishing any information, please be aware:
+- Do not share private keys or credentials
+- Only publish publicly available business information
+- Get consent before listing any contact details
+- Use public business contact methods instead of personal ones
+- Regularly review published information for privacy concerns
 
-## 🧞 Commands
+## Overview
 
-All commands are run from the root of the project, from a terminal:
+Open-source directory showcasing Bitcoin and Lightning Network services/businesses in Spain.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Data Privacy Guidelines
 
-## 👀 Want to learn more?
+When submitting listings:
+- Only include publicly available business information
+- Use official business contact methods
+- Avoid personal phone numbers or emails
+- Get explicit permission before listing any business
+- Do not include private financial information
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Environment Setup
+
+Required environment variables for Netlify:
+
+```bash
+GITHUB_TOKEN=your_github_personal_access_token
+GITHUB_OWNER=your_github_username
+GITHUB_REPO=your_repository_name 
+GITHUB_FILE_PATH=path/to/data/file.json
+```
+
+### Getting Environment Variables
+
+1. **GITHUB_TOKEN**: 
+   - Go to GitHub Settings > Developer Settings > Personal Access Tokens
+   - Generate token with `repo` permissions
+   - Keep token secure
+
+2. **GITHUB_OWNER**:
+   - Your GitHub username
+
+3. **GITHUB_REPO**:
+   - Repository name
+
+4. **GITHUB_FILE_PATH**:
+   - Path to data file (e.g., `data/listings.json`)
+
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Deployment Steps
+
+1. Fork repository
+2. Connect fork to Netlify
+3. Configure environment variables
+4. Deploy!
+
+## Security Best Practices
+
+- Rotate GitHub tokens regularly
+- Use environment variables for sensitive data
+- Never commit sensitive information
+- Regular security audits of published data
+- Implement rate limiting
+- Monitor suspicious activity
+
+## Dependencies
+
+```json
+{
+  "dependencies": {
+    "@astrojs/netlify": "^3.0.4",
+    "@astrojs/react": "^3.0.7",
+    "@astrojs/tailwind": "^5.0.3",
+    "astro": "^4.0.7",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.0"
+  }
+}
+```
+
+## License
+
+This project is open source under the MIT license. Feel free to use it for your own community!

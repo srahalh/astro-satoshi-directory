@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/ModeToggle";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,

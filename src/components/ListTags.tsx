@@ -1,21 +1,12 @@
-import dataWebsites from "@/data/websites.json";
+import tags from "@/data/tags.json";
 import { cn } from "@/lib/utils";
 import { filteredTags } from "@/store";
 import { useStore } from "@nanostores/react";
 import { X } from "lucide-react";
-import { useMemo } from "react";
 import { Button } from "./ui/button";
 
 export default function ListTags() {
   const selectedTags: string[] = useStore(filteredTags);
-
-  const tags = useMemo(() => {
-    const tags = new Set<string>();
-    dataWebsites.forEach((website) => {
-      website.tags.forEach((tag) => tags.add(tag));
-    });
-    return Array.from(tags).sort((a, b) => a.localeCompare(b));
-  }, []);
 
   return (
     <div

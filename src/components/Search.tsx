@@ -36,7 +36,7 @@ export default function Search({ className }: { className?: string }) {
     >
       <div className={cn("relative flex w-full")}>
         <Input
-          placeholder="Enter something..."
+          placeholder="Busca lo que necesites..."
           value={search}
           className="h-12 w-full bg-background pl-12 text-sm shadow-lg md:h-16 md:text-lg"
           onChange={(e) => setSearch(e.target.value)}
@@ -70,7 +70,7 @@ export default function Search({ className }: { className?: string }) {
         )}
         onClick={() => onClickSearch()}
       >
-        Search
+        Buscar
       </Button>
     </div>
   );

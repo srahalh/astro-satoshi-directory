@@ -4,6 +4,23 @@
       "url": "saidrahal.com",
       "comment": "test de app",
       "submittedAt": "2025-02-22T16:29:08.811Z"
+    },
+    {
+      "title": "Test",
+      "description": "Esto es una prueba de contenido, Esto es una prueba de contenido Esto es una prueba de contenido Esto es una prueba de contenido Esto es una prueba de contenidoEsto es una prueba de contenidoEsto es una prueba de contenido",
+      "contact": "test@test.com",
+      "website": "https://github.com/srahalh/astro-satoshi-directory",
+      "province": "Madrid",
+      "paymentMethods": [
+        "Bitcoin Onchain",
+        "Otro"
+      ],
+      "categories": [
+        "Otros",
+        "Tecnología",
+        "Educación"
+      ],
+      "submittedAt": "2025-03-23T15:28:55.660Z"
     }
   ]
 }

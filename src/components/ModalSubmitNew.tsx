@@ -23,8 +23,8 @@ interface ModalSubmitNewProps {
 }
 
 export default function ModalSubmitNew({ children }: ModalSubmitNewProps) {
-  const title = "Submit a new website";
-  const description = "Request us to list your website on this website";
+  const title = "Crea una nueva entrada";
+  const description = "Rellena los campos para crear una nueva entrada";
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 

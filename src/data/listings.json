@@ -16,6 +16,21 @@
         "Educación"
       ],
       "submittedAt": "2025-03-23T15:28:55.660Z"
+    },
+    {
+      "title": "Test",
+      "description": "Test",
+      "contact": "test@test.com",
+      "website": "http://192.168.1.2:3030/",
+      "province": "Álava",
+      "paymentMethods": [
+        "Fiat"
+      ],
+      "categories": [
+        "Entretenimiento",
+        "Mascotas"
+      ],
+      "submittedAt": "2025-03-23T17:10:45.794Z"
     }
   ]
 }

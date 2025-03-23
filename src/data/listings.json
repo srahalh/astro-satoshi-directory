@@ -1,36 +1,22 @@
 {
   "listings": [
     {
-      "title": "Test",
-      "description": "Esto es una prueba de contenido, Esto es una prueba de contenido Esto es una prueba de contenido Esto es una prueba de contenido Esto es una prueba de contenidoEsto es una prueba de contenidoEsto es una prueba de contenido",
-      "contact": "test@test.com",
-      "website": "https://github.com/srahalh/astro-satoshi-directory",
+      "title": "Desarrollo web",
+      "description": "Desarrollo de páginas web y aplicaciones web a medida.",
+      "contact": "hola@saidrahal.com",
+      "website": "https://saidrahal.com/",
       "province": "Madrid",
       "paymentMethods": [
         "Bitcoin Onchain",
+        "Bitcoin Lightning",
+        "Fiat",
         "Otro"
       ],
       "categories": [
-        "Otros",
         "Tecnología",
-        "Educación"
+        "Servicios Profesionales"
       ],
       "submittedAt": "2025-03-23T15:28:55.660Z"
-    },
-    {
-      "title": "Test",
-      "description": "Test",
-      "contact": "test@test.com",
-      "website": "http://192.168.1.2:3030/",
-      "province": "Álava",
-      "paymentMethods": [
-        "Fiat"
-      ],
-      "categories": [
-        "Entretenimiento",
-        "Mascotas"
-      ],
-      "submittedAt": "2025-03-23T17:10:45.794Z"
     },
     {
       "title": "Camisetas Bitcoin",

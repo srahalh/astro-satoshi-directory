@@ -52,7 +52,7 @@ exports.handler = async (event) => {
           'X-GitHub-Api-Version': '2022-11-28',
         },
         body: JSON.stringify({
-          message: `Add new listing: ${newListing.url}`,
+          message: `Add new listing: ${newListing.title}`,
           content: Buffer.from(JSON.stringify(currentData, null, 2)).toString('base64'),
           sha: sha,
         }),

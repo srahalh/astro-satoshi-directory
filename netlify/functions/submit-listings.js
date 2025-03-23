@@ -4,14 +4,15 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
+  console.log('Received event:', event.body);
   const newListing = JSON.parse(event.body);
   const token = process.env.GITHUB_TOKEN;
   const owner = 'srahalh';
   const repo = 'astro-satoshi-directory';
-  const filePath = 'data/listings.json';
+  const filePath = 'src/data/listings.json';
 
   try {
-    // Paso 1: Obtener el contenido actual del archivo (GET)
+    console.log('Fetching current file...');
     const getResponse = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`,
       {
@@ -24,18 +25,24 @@ exports.handler = async (event) => {
       }
     );
 
-    if (!getResponse.ok) {
+    let currentData = { listings: [] };
+    let sha = null;
+
+    if (getResponse.ok) {
+      const fileData = await getResponse.json();
+      currentData = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf8'));
+      sha = fileData.sha;
+      console.log('File fetched successfully:', currentData);
+    } else if (getResponse.status === 404) {
+      console.log('File not found, will create a new one...');
+    } else {
       throw new Error(`Failed to fetch file: ${getResponse.status}`);
     }
 
-    const fileData = await getResponse.json();
-    const currentContent = Buffer.from(fileData.content, 'base64').toString('utf8');
-    const currentData = JSON.parse(currentContent);
-
-    // Paso 2: Agregar el nuevo listing al array
     currentData.listings.push(newListing);
+    console.log('Updated data:', currentData);
 
-    // Paso 3: Actualizar el archivo en el repositorio (PUT)
+    console.log('Updating file in GitHub...');
     const updateResponse = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`,
       {
@@ -46,23 +53,25 @@ exports.handler = async (event) => {
           'X-GitHub-Api-Version': '2022-11-28',
         },
         body: JSON.stringify({
-          message: `Add new listing: ${newListing.url}`,
+          message: `Add new listing: ${newListing.title}`,
           content: Buffer.from(JSON.stringify(currentData, null, 2)).toString('base64'),
-          sha: fileData.sha,
+          sha: sha,
         }),
       }
     );
 
     if (!updateResponse.ok) {
-      throw new Error(`Failed to update file: ${updateResponse.status}`);
+      const errorText = await updateResponse.text();
+      throw new Error(`Failed to update file: ${updateResponse.status} - ${errorText}`);
     }
 
+    console.log('File updated successfully');
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Success' }),
     };
   } catch (error) {
-    console.error(error);
+    console.error('Error:', error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Failed to update listing' }),
